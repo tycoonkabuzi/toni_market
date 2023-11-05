@@ -18,7 +18,7 @@ function Header() {
         <div className="containterShoe">
           <img alt="shoe main showing front page " src={shoe1} />
           <div className="price">
-            <h2>$200.00</h2>
+            <h1>$200.00</h1>
             <p>$359.99</p>
           </div>
         </div>

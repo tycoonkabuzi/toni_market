@@ -2,6 +2,8 @@
 body{
   font-family: 'Nunito Sans', sans-serif;
   color: #535456;
+  margin: 0;
+  padding: 0;
 }
 .App {
   text-align: center;
