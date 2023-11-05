@@ -1,0 +1,61 @@
+.main{
+    margin-top:100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+}
+.mainText h1{
+    font-size: 80px;
+    width: 680px;
+    text-align: left;
+    line-height: 80px;
+    
+}
+.containterShoe{
+    width: 400px;
+    height: 400px;
+    background-color: #E04646;
+    border-radius: 100%;
+    position: relative;
+}
+.containterShoe img{
+    width: 500px;
+    transform: rotate(-18deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.grayPart{
+    color: #a3a2a2;
+}
+.containerDots{
+    background-color: rgb(232, 232, 232);
+    width: 150px;
+    height: 30px;
+    border-radius: 100px;
+    display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 5px 0 5px;
+        margin: auto;
+}
+.containerDots span{
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+}
+.blue{
+    background-color: #47A7ED;
+}
+.green {
+    background-color:#42CB81;
+}
+.red {
+    background-color:#E04646;
+}
+.purpule{
+    background-color: #CC53E8;
+}
