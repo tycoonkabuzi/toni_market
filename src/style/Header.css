@@ -21,6 +21,15 @@
     border-radius: 100%;
     position: relative;
 }
+.containerBlue{
+    background-color: #4b46e0;
+}
+.containerGreen {
+    background-color: #22bd6d;
+}
+.containerPurpole {
+    background-color: #8c4071;
+}
 .containterShoe img{
     width: 500px;
     transform: rotate(-26deg);
