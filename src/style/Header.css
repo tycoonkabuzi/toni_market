@@ -60,6 +60,11 @@
     height: 15px;
     border-radius: 20px;
 }
+.blue.active,.green.active,.red.active,.purpule.active{
+    width: 20px;
+    height: 20px;
+    border: solid 3px rgb(255, 255, 255);
+}
 .blue{
     background-color: #47A7ED;
 }
