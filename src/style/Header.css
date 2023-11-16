@@ -12,6 +12,8 @@
     width: 650px;
     text-align: left;
     line-height: 80px;
+    animation:upToDown 2s ease-in;
+
     
 }
 .containterShoe{
@@ -20,6 +22,7 @@
     background-color: #E04646;
     border-radius: 100%;
     position: relative;
+    animation: rightToLeft 3s ease-in-out;
 }
 .containerBlue{
     background-color: #4b46e0;
@@ -35,13 +38,14 @@
     transform: rotate(-26deg);
     position: absolute;
     right: -30px;
-
     top: 100px;
+    animation: rightToLeftImage 4s ease-in-out;
 
 
 }
 .grayPart{
     color: #a3a2a2;
+    animation: upToDown 3s ease-in-out;
 }
 .containerDots{
     background-color: rgb(232, 232, 232);
@@ -59,6 +63,7 @@
     width: 15px;
     height: 15px;
     border-radius: 20px;
+    cursor: pointer;
 }
 .blue.active,.green.active,.red.active,.purpule.active{
     width: 20px;
@@ -67,15 +72,20 @@
 }
 .blue{
     background-color: #47A7ED;
+    animation:opacityChange 3s;
+    animation: opacityChange 3s;
 }
 .green {
     background-color:#42CB81;
+    animation: opacityChange 3s  3s;
 }
 .red {
     background-color:#E04646;
+    animation: opacityChange 3s  2s;
 }
 .purpule{
     background-color: #CC53E8;
+    animation: opacityChange 3s 1s;
 }
 .price{
     position: absolute;
@@ -89,4 +99,42 @@
 }
 .price h1{
         font-weight: 800;
+}
+
+@keyframes upToDown {
+    0%{
+        transform: translateY(-90px) ;
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes rightToLeft {
+    0%{
+        transform: translateX(100px);
+       
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes rightToLeftImage {
+    0% {
+        transform: translateX(100px) rotate(-26deg);
+
+    }
+
+    100% {
+        transform: translateX(0) rotate(-26deg);
+    }
+}
+@keyframes opacityChange {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
