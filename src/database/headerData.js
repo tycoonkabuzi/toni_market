@@ -17,7 +17,7 @@ const Data = [
     pic: shoe2,
     price: 560,
     oldPrice: 850,
-    color: "containerPurpole",
+    color: "containerPurpule",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const Data = [
     pic: shoe3,
     price: 340,
     oldPrice: 500,
-    color: "containerPurpole",
+    color: " ",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const Data = [
     pic: shoe4,
     price: 159.99,
     oldPrice: 353.33,
-    color: " ",
+    color: "containerGreen",
   },
 ];
 export default Data;

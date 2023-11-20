@@ -22,16 +22,16 @@
     background-color: #E04646;
     border-radius: 100%;
     position: relative;
-    animation: rightToLeft 3s ease-in-out;
+    animation: rightToLeft 1.5s ease-in-out;
 }
 .containerBlue{
-    background-color: #4b46e0;
+    background-color:#47A7ED;
 }
 .containerGreen {
-    background-color: #22bd6d;
+    background-color: #42CB81;
 }
-.containerPurpole {
-    background-color: #8c4071;
+.containerPurpule {
+    background-color:#CC53E8;
 }
 .containterShoe img{
     width: 500px;
@@ -72,8 +72,8 @@
 }
 .blue{
     background-color: #47A7ED;
-    animation:opacityChange 3s;
-    animation: opacityChange 3s;
+    animation:opacityChange 1.5s;
+    animation: opacityChange 1.5s;
 }
 .green {
     background-color:#42CB81;

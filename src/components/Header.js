@@ -4,71 +4,41 @@ import Data from "../database/headerData";
 import { useEffect, useState } from "react";
 
 function Header() {
+  // creating useState for the current index.
   const [currentIndex, setCurrentIndex] = useState(0);
   const [active, setActive] = useState({
     blue: true,
     purpule: false,
-    green: false,
     red: false,
+    green: false,
   });
+
   useEffect(() => {
+    let current;
     const interval = setInterval(() => {
       const numberOfElements = Data.length;
       setCurrentIndex((prev) => {
-        const current = (prev + 1) % numberOfElements;
-        console.log(current);
-        const keys = Object.keys(active);
-        const indexWhatColor = keys[current];
-
-        console.log(indexWhatColor);
-        setActive((prev) => {
-          const updateColor = {
-            ...prev,
-            [indexWhatColor]: !prev[indexWhatColor],
-          };
-          console.log(updateColor);
-          return updateColor;
-        });
-        /*
-
-       
-
-       
- if (current === 0) {
-          setActive({
-            blue: true,
-            purpule: false,
-            green: false,
-            red: false,
-          });
-        } else if (current === 1) {
-          setActive({
-            blue: false,
-            purpule: true,
-            green: false,
-            red: false,
-          });
-        } else if (current === 2) {
-          setActive({
-            blue: false,
-            purpule: false,
-            green: false,
-            red: true,
-          });
-        } else if (current === 3) {
-          setActive({
-            blue: false,
-            purpule: false,
-            green: true,
-            red: false,
-          });
-        }
-*/
+        current = (prev + 1) % numberOfElements;
         return current;
       });
-    }, 5000);
+      setActive((prev) => {
+        const keys = Object.keys(active);
+        const indexWhatColor = keys[current];
+        const updateColor = {
+          ...prev,
+          [indexWhatColor]: !prev[indexWhatColor],
+        };
+        for (const element in updateColor) {
+          if (element !== indexWhatColor) {
+            updateColor[element] = false;
+          }
+        }
+        return updateColor;
+      });
+    }, 3500);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, active]);
+
   function toGray(word) {
     const grayPart = word.text.split(" ", 2).join(" ");
     return grayPart;
