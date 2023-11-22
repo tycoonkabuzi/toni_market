@@ -1,47 +1,60 @@
 import "../style/FavouritePanel.css";
-import shoe1 from "../assets/shoe2.png";
-import shoe2 from "../assets/shoe3.png";
-import shoe3 from "../assets/shoe4.png";
+import positive from "../assets/positive.png";
+import negative from "../assets/negative.png";
+
+import favouriteData from "../database/favouriteData";
+import next from "../assets/next.png";
+import previous from "../assets/previous.png";
+import { useState } from "react";
+
 function FavouritePanel() {
+  const [translateX, setTranslateX] = useState(0);
+  function handlePrevious() {
+    setTranslateX(translateX + 800);
+  }
+  function handleNext() {
+    setTranslateX(translateX - 800);
+  }
+  if (translateX === 800 || translateX === -4000) {
+    setTranslateX(0);
+  }
+
   return (
     <div>
       <div>
         <h1>Your Favourite shoes to wear</h1>
         <p>Here is a small list of your favourite shoes </p>
       </div>
-      <div className="itemContainer">
-        <div className="item">
-          <img alt="Jordan Air H34 " src={shoe1} />
-          <h3>Jordan Air H34</h3>
-          <h4>$150.00</h4>
-          <div className="favourite">
-            <span className="positive"></span>
-            <span className="negative"></span>
+      <div className="favoriteSection">
+        <button className="buttonCarousel" onClick={handlePrevious}>
+          <img alt="previous" src={previous} />
+        </button>
+        <div className="mainFavorite">
+          <div
+            className="itemContainer"
+            style={{ transform: `translateX(${translateX}px)` }}
+          >
+            {favouriteData.map((shoe) => (
+              <div className="item">
+                <img alt="Jordan Air H34 " src={shoe.picture} />
+                <h3>{shoe.shoeName}</h3>
+                <h4>{shoe.price}</h4>
+                <div>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className="favourite">
+                  <span className="positive"></span>
+                  <span className="negative"></span>
+                </div>
+                <button className="addButton">Add to bag</button>
+              </div>
+            ))}
           </div>
-          <button className="addButton">Add to bag</button>
         </div>
-
-        <div className="item">
-          <img alt="Jordan Air H34 " src={shoe2} />
-          <h3>Jordan Air H34</h3>
-          <h4>$150.00</h4>
-          <div className="favourite">
-            <span className="positive"></span>
-            <span className="negative"></span>
-          </div>
-          <button className="addButton">Add to bag</button>
-        </div>
-
-        <div className="item">
-          <img alt="Jordan Air H34 " src={shoe3} />
-          <h3>Jordan Air H34</h3>
-          <h4>$150.00</h4>
-          <div className="favourite">
-            <span className="positive"></span>
-            <span className="negative"></span>
-          </div>
-          <button className="addButton">Add to bag</button>
-        </div>
+        <button className="buttonCarousel" onClick={() => handleNext()}>
+          <img alt=" next" src={next} />
+        </button>
       </div>
     </div>
   );
