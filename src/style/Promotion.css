@@ -1,0 +1,34 @@
+.promotionMain {
+    background-color: #679393;
+    display: grid;
+    grid-template-columns: auto 55%;
+    height: 300px;
+}
+
+.promotionImage img {
+    width: 1000px;
+    position: absolute;
+    left: 10px;
+    margin-top: -200px;
+}
+
+.promotionText {
+    width: 600px;
+    text-align: left;
+    margin-top: 40px;
+    color: white;
+    line-height: 20px;
+}
+
+.promotionText h1 {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.addButton .check {
+    background-color: #3B2D27;
+}
+
+.addButton .check:hover {
+    background-color: #55423a;
+}

@@ -1,7 +1,9 @@
 import "../style/App.css";
 import Nav from "./Nav";
 import Header from "./Header";
+import TheStore from "./TheStore";
 import FavouritePanel from "./FavouritePanel";
+import Promotion from "./Promotion";
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Nav />
       <Header />
       <FavouritePanel />
+      <TheStore />
+      <Promotion />
     </div>
   );
 }

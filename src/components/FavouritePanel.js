@@ -9,6 +9,7 @@ import { useState } from "react";
 
 function FavouritePanel() {
   const [translateX, setTranslateX] = useState(0);
+  const [numberOfStars, setNumberOfStars] = useState(5);
   function handlePrevious() {
     setTranslateX(translateX + 800);
   }
@@ -17,6 +18,10 @@ function FavouritePanel() {
   }
   if (translateX === 800 || translateX === -4000) {
     setTranslateX(0);
+  }
+  function toStar(item) {
+    const stars = Array.from({ length: item.stars }, (_, index) => 0);
+    return stars;
   }
 
   return (
@@ -39,9 +44,13 @@ function FavouritePanel() {
                 <img alt="Jordan Air H34 " src={shoe.picture} />
                 <h3>{shoe.shoeName}</h3>
                 <h4>{shoe.price}</h4>
-                <div>
-                  <span></span>
-                  <span></span>
+                <div className="stars">
+                  <span>
+                    {toStar(shoe).map(() => (
+                      <img alt="stars" src={positive} />
+                    ))}
+                  </span>
+                  <span> </span>
                 </div>
                 <div className="favourite">
                   <span className="positive"></span>
