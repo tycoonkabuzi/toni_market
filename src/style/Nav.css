@@ -1,52 +1,58 @@
-.icons{
+.icons {
     display: grid;
     grid-template-columns: auto auto;
     width: 100px;
 }
-.nav__links{
+
+.nav__links {
     display: grid;
-        grid-template-columns: auto auto auto auto;
-        width: 400px;
-      
+    grid-template-columns: auto auto auto auto;
+    width: 400px;
+
 }
 
-li{
+li {
     list-style: none;
     cursor: pointer;
 
 }
-.nav__links :hover{
+
+.nav__links :hover {
     color: #E04646;
 }
 
-nav{
+nav {
     height: 100px;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-  
+
 }
-.scrolled{
+
+.scrolled {
     background-color: black;
     color: white;
     height: 60px;
-    margin-top:0px;
+    margin-top: 0px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1;
+    transform: translateZ("10px");
+    transition: ease-in-out 0.5s;
 }
 
-.logo{
+.logo {
     width: 50px;
 }
-li img{
+
+li img {
     width: 20px;
 }
-.active{
+
+.active {
     color: #E04646;
     font-weight: 800;
 }
-

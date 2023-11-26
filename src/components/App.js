@@ -4,6 +4,7 @@ import Header from "./Header";
 import TheStore from "./TheStore";
 import FavouritePanel from "./FavouritePanel";
 import Promotion from "./Promotion";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <FavouritePanel />
       <TheStore />
       <Promotion />
+      <Footer />
     </div>
   );
 }

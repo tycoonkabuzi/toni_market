@@ -12,9 +12,14 @@ function Header() {
     red: false,
     green: false,
   });
+  const [animation, setAnimation] = useState({});
 
   useEffect(() => {
     let current;
+    setAnimation({
+      transform: "translateX(-20px)",
+      transition: "ease-in 1s ",
+    });
     const interval = setInterval(() => {
       const numberOfElements = Data.length;
       setCurrentIndex((prev) => {
@@ -62,7 +67,7 @@ function Header() {
   }
 
   return (
-    <div className="main">
+    <div className="main" style={animation}>
       <div className="mainText">
         <h1>
           <span className="grayPart">{toGray(Data[currentIndex])} </span>
