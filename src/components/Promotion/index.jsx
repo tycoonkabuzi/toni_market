@@ -1,5 +1,5 @@
-import "../style/Promotion.css";
-import shoe6 from "../assets/shoe6.png";
+import "../../style/Promotion.css";
+import shoe6 from "../../assets/shoe6.png";
 function Promotion() {
   return (
     <div className="promotionMain">

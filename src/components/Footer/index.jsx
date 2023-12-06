@@ -1,8 +1,8 @@
-import logo from "../assets/logo.png";
-import facebook from "../assets/facebook.png";
-import twitter from "../assets/twitter.png";
-import instagram from "../assets/instagram.png";
-import "../style/Footer.css";
+import logo from "../../assets/logo.png";
+import facebook from "../../assets/facebook.png";
+import twitter from "../../assets/twitter.png";
+import instagram from "../../assets/instagram.png";
+import "../../style/Footer.css";
 function Footer() {
   function getDate() {
     const date = new Date();
@@ -20,7 +20,7 @@ function Footer() {
         </div>
 
         <div>
-          <h1> About us</h1>
+          <h3> About us</h3>
           <ul>
             <li>Beauty</li>
             <li>Chain</li>
@@ -29,7 +29,7 @@ function Footer() {
         </div>
 
         <div>
-          <h1> Resources</h1>
+          <h3> Resources</h3>
           <ul>
             <li>Beauty</li>
             <li>Chain</li>
@@ -38,7 +38,7 @@ function Footer() {
         </div>
 
         <div>
-          <h1>Get in Touch</h1>
+          <h3>Get in Touch</h3>
 
           <ul className="socialMedia">
             <li>

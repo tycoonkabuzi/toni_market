@@ -1,6 +1,6 @@
-import "../style/Header.css";
+import "../../style/Header.css";
 
-import Data from "../database/headerData";
+import Data from "../../database/headerData";
 import { useEffect, useState } from "react";
 
 function Header() {

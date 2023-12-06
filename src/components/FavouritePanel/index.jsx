@@ -1,10 +1,10 @@
-import "../style/FavouritePanel.css";
-import positive from "../assets/positive.png";
-import negative from "../assets/negative.png";
+import "../../style/FavouritePanel.css";
+import positive from "../../assets/positive.png";
+import negative from "../../assets/negative.png";
 
-import favouriteData from "../database/favouriteData";
-import next from "../assets/next.png";
-import previous from "../assets/previous.png";
+import favouriteData from "../../database/favouriteData";
+import next from "../../assets/next.png";
+import previous from "../../assets/previous.png";
 import { useState } from "react";
 
 function FavouritePanel() {

@@ -1,12 +1,18 @@
-import logo from "../assets/logo.png";
-import logoWhite from "../assets/logowhite.png";
-import "../style/Nav.css";
-import searchLogo from "../assets/search.png";
-import bagLogo from "../assets/bag.png";
+import logo from "../../assets/logo.png";
+import logoWhite from "../../assets/logowhite.png";
+import "../../style/Nav.css";
+import searchLogo from "../../assets/search.png";
+import bagLogo from "../../assets/bag.png";
+import Cart from "../Cart";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [scroll, setScroll] = useState(false);
+  const [close, setClose] = useState(false);
+  function handleCloseTrigger() {
+    setClose(true);
+  }
   const [active, setActive] = useState({
     home: true,
     collection: false,
@@ -68,9 +74,10 @@ function Nav() {
           <img alt="logo" src={searchLogo} />
         </li>
         <li>
-          <img alt="logo" src={bagLogo} />
+          <img alt="bagLogo" src={bagLogo} onClick={handleCloseTrigger} />
         </li>
       </ul>
+      {close ? <Cart toClose={close} setToClose={setClose} /> : close}
     </nav>
   );
 }

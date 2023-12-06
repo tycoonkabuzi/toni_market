@@ -1,12 +1,12 @@
-import "../style/TheStore.css";
-import plus from "../assets/plus.png";
-import shoe10 from "../assets/shoe10.png";
-import shoe11 from "../assets/shoe11.png";
-import shoe13 from "../assets/shoe13.png";
-import shoe14 from "../assets/shoe14.png";
-import shoe15 from "../assets/shoe15.png";
-import shoe16 from "../assets/shoe16.png";
-import shoe17 from "../assets/shoe17.png";
+import "../../style/TheStore.css";
+import plus from "../../assets/plus.png";
+import shoe10 from "../../assets/shoe10.png";
+import shoe11 from "../../assets/shoe11.png";
+import shoe13 from "../../assets/shoe13.png";
+import shoe14 from "../../assets/shoe14.png";
+import shoe15 from "../../assets/shoe15.png";
+import shoe16 from "../../assets/shoe16.png";
+import shoe17 from "../../assets/shoe17.png";
 function TheStore() {
   return (
     <div className="container">

@@ -21,6 +21,7 @@ const favouriteData = [
     price: "$100.00",
     stars: 5,
     picture: shoe5,
+    for: "men",
   },
 
   {
@@ -29,6 +30,7 @@ const favouriteData = [
     price: "$129.99",
     stars: 3,
     picture: shoe7,
+    for: "women",
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const favouriteData = [
     price: "$150.99",
     stars: 2,
     picture: shoe8,
+    for: "men",
   },
 
   {
@@ -44,6 +47,7 @@ const favouriteData = [
     price: "$99.99",
     stars: 3,
     picture: shoe9,
+    for: "women",
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ const favouriteData = [
     price: "$119.99",
     stars: 4,
     picture: shoe10,
+    for: "kids",
   },
 
   {
@@ -59,6 +64,7 @@ const favouriteData = [
     price: "$100.99",
     stars: 4,
     picture: shoe12,
+    for: "kids",
   },
   {
     id: 7,
@@ -66,6 +72,7 @@ const favouriteData = [
     price: "$89.99",
     stars: 4,
     picture: shoe11,
+    for: "kids",
   },
 
   {
@@ -74,6 +81,7 @@ const favouriteData = [
     price: "$299.99",
     stars: 4,
     picture: shoe13,
+    for: "men",
   },
   {
     id: 9,
@@ -81,6 +89,7 @@ const favouriteData = [
     price: "$79.99",
     stars: 4,
     picture: shoe14,
+    for: "men",
   },
 
   {
@@ -89,6 +98,7 @@ const favouriteData = [
     price: "$150.99",
     stars: 4,
     picture: shoe16,
+    for: "women",
   },
   {
     id: 11,
@@ -96,6 +106,7 @@ const favouriteData = [
     price: "$16009.99",
     stars: 5,
     picture: shoe17,
+    for: "women",
   },
 
   {
@@ -104,6 +115,7 @@ const favouriteData = [
     price: "$239.99",
     stars: 4,
     picture: shoe18,
+    for: "men",
   },
   {
     id: 13,
@@ -119,6 +131,7 @@ const favouriteData = [
     price: "$399.99",
     stars: 5,
     picture: shoe20,
+    for: "women",
   },
   {
     id: 15,
@@ -126,6 +139,7 @@ const favouriteData = [
     price: "$199.99",
     stars: 4,
     picture: shoe15,
+    for: "men",
   },
   {
     id: 16,
@@ -133,6 +147,7 @@ const favouriteData = [
     price: "$199.99",
     stars: 4,
     picture: shoe21,
+    for: "women",
   },
 ];
 export default favouriteData;
