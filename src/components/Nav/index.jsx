@@ -5,7 +5,55 @@ import searchLogo from "../../assets/search.png";
 import bagLogo from "../../assets/bag.png";
 import Cart from "../Cart";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Main = styled.nav`
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  align-items: center;
+
+  ${(props) =>
+    props.scroll &&
+    ` background-color: black;
+    margin-top: 0;
+    color: white;
+    height: 60px;
+    margin-top: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    transition: ease-in-out 0.3s;
+
+   `}
+`;
+
+const Icons = styled.ul`
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100px;
+`;
+const NavLinks = styled.ul`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 400px;
+`;
+const NavLink = styled.li`
+  list-style: none;
+  cursor: pointer;
+  &:hover {
+    color: #e04646;
+  }
+  ${(props) => (props.active ? `color: red; font-weight:800` : "")}
+`;
+const Logo = styled.img`
+  width: 50px;
+`;
+const IconImage = styled.img`
+  width: 20px;
+`;
 
 function Nav() {
   const [scroll, setScroll] = useState(false);
@@ -34,51 +82,45 @@ function Nav() {
     window.addEventListener("scroll", handleScroll);
   }, []);
   const handleScroll = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY >= 120) {
       setScroll(true);
     } else {
       setScroll(false);
     }
   };
   return (
-    <nav className={scroll ? "scrolled" : ""}>
-      <img className="logo" alt="logo" src={scroll ? logoWhite : logo} />
-      <ul className="nav__links">
-        <li
-          onClick={() => handleActiveness("home")}
-          className={active.home ? "active" : ""}
-        >
+    <Main scroll={scroll}>
+      <Logo src={scroll ? logoWhite : logo} />
+      <NavLinks>
+        <NavLink active={active.home} onClick={() => handleActiveness("home")}>
           Home
-        </li>
-        <li
+        </NavLink>
+        <NavLink
+          active={active.collection}
           onClick={() => handleActiveness("collection")}
-          className={active.collection ? "active" : ""}
         >
           Collection
-        </li>
-        <li
+        </NavLink>
+        <NavLink
+          active={active.brand}
           onClick={() => handleActiveness("brand")}
-          className={active.brand ? "active" : ""}
         >
           Brand
-        </li>
-        <li
-          onClick={() => handleActiveness("blog")}
-          className={active.blog ? "active" : ""}
-        >
+        </NavLink>
+        <NavLink active={active.blog} onClick={() => handleActiveness("blog")}>
           Blog
-        </li>
-      </ul>
-      <ul className="icons">
-        <li>
-          <img alt="logo" src={searchLogo} />
-        </li>
-        <li>
-          <img alt="bagLogo" src={bagLogo} onClick={handleCloseTrigger} />
-        </li>
-      </ul>
+        </NavLink>
+      </NavLinks>
+      <Icons>
+        <NavLink>
+          <IconImage alt="logo" src={searchLogo} />
+        </NavLink>
+        <NavLink>
+          <IconImage alt="bagLogo" src={bagLogo} onClick={handleCloseTrigger} />
+        </NavLink>
+      </Icons>
       {close ? <Cart toClose={close} setToClose={setClose} /> : close}
-    </nav>
+    </Main>
   );
 }
 export default Nav;
