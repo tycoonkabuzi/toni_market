@@ -1,6 +1,6 @@
 import logo from "../../assets/logo.png";
 import logoWhite from "../../assets/logowhite.png";
-import "../../style/Nav.css";
+
 import searchLogo from "../../assets/search.png";
 import bagLogo from "../../assets/bag.png";
 import Cart from "../Cart";
