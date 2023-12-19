@@ -14,7 +14,6 @@ function Home() {
       <FavouritePanel />
       <Store />
       <Promotion />
-
       <Footer />
     </div>
   );
