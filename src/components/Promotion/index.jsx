@@ -1,21 +1,53 @@
-import "../../style/Promotion.css";
 import shoe6 from "../../assets/shoe6.png";
+import styled from "styled-components";
+const Main = styled.div`
+  background-color: #679393;
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 300px;
+`;
+const ShoePicture = styled.img`
+  width: 500px;
+  left: 10px;
+  margin-top: -130px;
+`;
+const Text = styled.div`
+  width: 600px;
+  text-align: left;
+  margin-top: 40px;
+  color: white;
+  line-height: 20px;
+`;
+const Check = styled.button`
+  background-color: #525252;
+  border: none;
+  color: white;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  &:hover {
+    background-color: #6b615c;
+  }
+`;
+const Title = styled.h1`
+  font-weight: 700;
+  font-size: 50px;
+`;
 function Promotion() {
   return (
-    <div className="promotionMain">
-      <div className="promotionImage">
-        <img alt="jordan 1" src={shoe6} />
-      </div>
-      <div className="promotionText">
-        <h1>-50% Black Friday Sale</h1>
+    <Main>
+      <ShoePicture alt="jordan 1" src={shoe6} />
+
+      <Text>
+        <Title>-50% Black Friday Sale</Title>
         <p>
           The Black Friday has started the only thing you need to do is to click
           on the button below and you will be able to access to one of the best
           offers at Toni where you are able to buy a shoe for half it price.
         </p>
-        <button className="addButton check"> Check it out</button>
-      </div>
-    </div>
+        <Check> Check it out</Check>
+      </Text>
+    </Main>
   );
 }
 export default Promotion;

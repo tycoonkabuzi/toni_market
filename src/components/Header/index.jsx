@@ -44,7 +44,7 @@ const TextContainer = styled.div`
   background-color: none;
 `;
 const Text = styled.h1`
-  font-size: 80px;
+  font-size: 70px;
   width: 650px;
   text-align: left;
   line-height: 80px;

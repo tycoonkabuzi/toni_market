@@ -1,4 +1,3 @@
-import "../../style/FavouritePanel.css";
 import positive from "../../assets/positive.png";
 import negative from "../../assets/negative.png";
 import favouriteData from "../../database/favouriteData";
@@ -10,6 +9,7 @@ const MainFavourite = styled.div`
   width: 1000px;
   margin: auto;
   padding-bottom: 100px;
+  text-align: center;
 `;
 const FavouriteSection = styled.div`
   display: grid;

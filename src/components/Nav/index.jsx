@@ -6,7 +6,7 @@ import bagLogo from "../../assets/bag.png";
 import Cart from "../Cart";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const Main = styled.nav`
   margin-top: 60px;
   display: grid;
@@ -24,7 +24,7 @@ const Main = styled.nav`
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     transition: ease-in-out 0.3s;
 
    `}
@@ -40,9 +40,11 @@ const NavLinks = styled.ul`
   grid-template-columns: auto auto auto auto;
   width: 400px;
 `;
-const NavLink = styled.li`
+const NavLink = styled(Link)`
   list-style: none;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   &:hover {
     color: #e04646;
   }
@@ -90,9 +92,15 @@ function Nav() {
   };
   return (
     <Main scroll={scroll}>
-      <Logo src={scroll ? logoWhite : logo} />
+      <NavLink to="/">
+        <Logo src={scroll ? logoWhite : logo} />
+      </NavLink>
       <NavLinks>
-        <NavLink active={active.home} onClick={() => handleActiveness("home")}>
+        <NavLink
+          to="/"
+          active={active.home}
+          onClick={() => handleActiveness("home")}
+        >
           Home
         </NavLink>
         <NavLink
