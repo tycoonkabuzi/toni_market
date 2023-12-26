@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Filter from "./components/Filter";
 import Collection from "./Pages/Collection";
+import Blog from "./Pages/Blog";
+import Brand from "./Pages/Brand";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -14,6 +16,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
+        <Route path="/brand" element={<Brand />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/filter" element={<Filter />} />
       </Routes>
     </Router>

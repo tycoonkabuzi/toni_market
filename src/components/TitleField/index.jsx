@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TitleContainer = styled.div`
-  width: 500px;
+  height: inherit;
   margin: auto;
   position: relative;
 `;
@@ -10,10 +10,10 @@ const Title = styled.h1`
   font-size: 100px;
   text-align: center;
 `;
-function TitleField() {
+function TitleField({ title }) {
   return (
     <TitleContainer>
-      <Title>Collection</Title>
+      <Title>{title}</Title>
     </TitleContainer>
   );
 }

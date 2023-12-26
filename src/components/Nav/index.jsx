@@ -116,6 +116,7 @@ function Nav() {
           Collection
         </NavLink>
         <NavLink
+          to="/brand"
           active={active.brand}
           scroll={scroll}
           location={location.pathname}
@@ -123,6 +124,7 @@ function Nav() {
           Brand
         </NavLink>
         <NavLink
+          to="/blog"
           active={active.blog}
           scroll={scroll}
           location={location.pathname}

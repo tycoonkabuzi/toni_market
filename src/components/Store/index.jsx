@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const Main = styled.div`
   background-color: rgb(250, 247, 247);
   height: 800px;
+  position: relative;
 `;
 const Menu = styled.div`
   display: grid;
