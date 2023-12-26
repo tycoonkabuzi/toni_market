@@ -1,24 +1,28 @@
 import logo from "../../assets/logo.png";
 import logoWhite from "../../assets/logowhite.png";
-
-import searchLogo from "../../assets/search.png";
-import bagLogo from "../../assets/bag.png";
+import search from "../../assets/search.png";
+import searchWhite from "../../assets/searchWhite.png";
+import bag from "../../assets/bag.png";
+import bagWhite from "../../assets/bagWhite.png";
 import Cart from "../Cart";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// css in js
 const Main = styled.nav`
+  position: relative;
   margin-top: 60px;
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 
   ${(props) =>
     props.scroll &&
     ` background-color: black;
     margin-top: 0;
-    color: white;
     height: 60px;
     margin-top: 0px;
     position: fixed;
@@ -42,13 +46,20 @@ const NavLinks = styled.ul`
 `;
 const NavLink = styled(Link)`
   list-style: none;
-  cursor: pointer;
+  color: #4d4d4d;
   text-decoration: none;
-  color: inherit;
+  cursor: pointer;
+  ${(props) =>
+    props.scroll &&
+    `
+    color: white;
+   `}
+  ${(props) => (props.location !== `/` ? `color: #ffffff;` : ``)}
+
   &:hover {
     color: #e04646;
   }
-  ${(props) => (props.active ? `color: red; font-weight:800` : "")}
+  ${(props) => (props.active ? `color: red; font-weight:800` : ``)}
 `;
 const Logo = styled.img`
   width: 50px;
@@ -60,26 +71,18 @@ const IconImage = styled.img`
 function Nav() {
   const [scroll, setScroll] = useState(false);
   const [close, setClose] = useState(false);
+  const location = useLocation();
+
   function handleCloseTrigger() {
     setClose(true);
   }
-  const [active, setActive] = useState({
-    home: true,
-    collection: false,
-    brand: false,
-    blog: false,
-  });
-  function handleActiveness(item) {
-    setActive((prevElement) => {
-      const updateState = { ...prevElement, [item]: !prevElement[item] };
-      for (const element in updateState) {
-        if (element !== item) {
-          updateState[element] = false;
-        }
-      }
-      return updateState;
-    });
-  }
+
+  const active = {
+    home: location.pathname === "/",
+    collection: location.pathname === "/collection",
+    brand: location.pathname === "/brand",
+    blog: location.pathname === "/blog",
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
@@ -93,38 +96,53 @@ function Nav() {
   return (
     <Main scroll={scroll}>
       <NavLink to="/">
-        <Logo src={scroll ? logoWhite : logo} />
+        <Logo src={scroll || location.pathname !== "/" ? logoWhite : logo} />
       </NavLink>
       <NavLinks>
         <NavLink
           to="/"
           active={active.home}
-          onClick={() => handleActiveness("home")}
+          scroll={scroll}
+          location={location.pathname}
         >
           Home
         </NavLink>
         <NavLink
+          to="/collection"
           active={active.collection}
-          onClick={() => handleActiveness("collection")}
+          scroll={scroll}
+          location={location.pathname}
         >
           Collection
         </NavLink>
         <NavLink
           active={active.brand}
-          onClick={() => handleActiveness("brand")}
+          scroll={scroll}
+          location={location.pathname}
         >
           Brand
         </NavLink>
-        <NavLink active={active.blog} onClick={() => handleActiveness("blog")}>
+        <NavLink
+          active={active.blog}
+          scroll={scroll}
+          location={location.pathname}
+        >
           Blog
         </NavLink>
       </NavLinks>
       <Icons>
         <NavLink>
-          <IconImage alt="logo" src={searchLogo} />
+          <IconImage
+            alt="logo"
+            src={scroll || location.pathname !== "/" ? searchWhite : search}
+          />
         </NavLink>
         <NavLink>
-          <IconImage alt="bagLogo" src={bagLogo} onClick={handleCloseTrigger} />
+          <IconImage
+            alt="bagLogo"
+            src={scroll || location.pathname !== "/" ? bagWhite : bag}
+            onClick={handleCloseTrigger}
+          />
         </NavLink>
       </Icons>
       {close ? <Cart toClose={close} setToClose={setClose} /> : close}

@@ -4,13 +4,16 @@ import Home from "./Pages/Home";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Filter from "./components/Filter";
+import Collection from "./Pages/Collection";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/collection" element={<Collection />} />
         <Route path="/filter" element={<Filter />} />
       </Routes>
     </Router>
