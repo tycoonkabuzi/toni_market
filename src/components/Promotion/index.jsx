@@ -5,11 +5,21 @@ const Main = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   height: 300px;
+  position: relative;
+  z-index: 1;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: auto;
+    height: 100%;
+    padding-bottom: 100px;
+  }
 `;
 const ShoePicture = styled.img`
   width: 500px;
   left: 10px;
   margin-top: -130px;
+  @media only screen and (max-width: 600px) {
+    width: 400px;
+  }
 `;
 const Text = styled.div`
   width: 600px;
@@ -17,6 +27,10 @@ const Text = styled.div`
   margin-top: 40px;
   color: white;
   line-height: 20px;
+  @media only screen and (max-width: 600px) {
+    width: 500px;
+    margin: auto;
+  }
 `;
 const Check = styled.button`
   background-color: #525252;
@@ -32,6 +46,9 @@ const Check = styled.button`
 const Title = styled.h1`
   font-weight: 700;
   font-size: 50px;
+  @media only screen and (max-width: 600px) {
+    font-size: 30px;
+  }
 `;
 function Promotion() {
   return (

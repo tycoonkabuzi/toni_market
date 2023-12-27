@@ -16,8 +16,22 @@ const MainSection = styled.div`
   padding-left: 4%;
   height: 300px;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    padding-top: 50px;
+    grid-template-columns: auto;
+    height: 100%;
+    width: 400px;
+    margin: auto;
+  }
 `;
-const Info = styled.div``;
+const Info = styled.div`
+  width: 400px;
+  @media only screen and (max-width: 600px) {
+    width: 300px;
+    padding-left: 20px;
+    margin: auto;
+  }
+`;
 const BottomFooter = styled.div`
   text-align: center;
   height: 50px;
@@ -27,8 +41,18 @@ const BottomFooter = styled.div`
 `;
 const Picture = styled.img`
   width: 150px;
+  @media only screen and (max-width: 600px) {
+    width: 200px;
+    margin: auto;
+  }
 `;
+const ContainerLink = styled.div`
+  @media only screen and (max-width: 600px) {
+    width: 300px;
 
+    margin: auto;
+  }
+`;
 const SocialPicture = styled.img`
   display: block;
   width: 20px;
@@ -39,10 +63,16 @@ const TheLinks = styled.div`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: left;
   align-items: center;
   margin-bottom: 10px;
 `;
+const MainTheLinks = styled.ul`
+  width: 80px;
+  margin: auto;
+  margin-left: -30px;
+`;
+const TextToni = styled.p``;
 
 function Footer() {
   function getDate() {
@@ -54,30 +84,30 @@ function Footer() {
       <MainSection>
         <Info>
           <Picture alt="logo" src={logo} />
-          <p>
+          <TextToni>
             We would like to give to our users a better experience and we
             believe that through toni we can get to that.
-          </p>
+          </TextToni>
         </Info>
-        <div>
+        <ContainerLink>
           <h3> About us</h3>
-          <ul>
+          <MainTheLinks>
             <TheLinks>Beauty</TheLinks>
             <TheLinks>Chain</TheLinks>
             <TheLinks>Creativity</TheLinks>
-          </ul>
-        </div>
+          </MainTheLinks>
+        </ContainerLink>
 
-        <div>
+        <ContainerLink>
           <h3> Resources</h3>
-          <ul>
+          <MainTheLinks>
             <TheLinks>Beauty</TheLinks>
             <TheLinks>Chain</TheLinks>
             <TheLinks>Creativity</TheLinks>
-          </ul>
-        </div>
+          </MainTheLinks>
+        </ContainerLink>
 
-        <div>
+        <ContainerLink>
           <h3>Get in Touch</h3>
           <TheLinks>
             <SocialPicture alt="Facebook" src={facebook} />
@@ -91,7 +121,7 @@ function Footer() {
           <TheLinks>
             <SocialPicture alt="Twitter" src={twitter} />X
           </TheLinks>
-        </div>
+        </ContainerLink>
       </MainSection>
       <BottomFooter>Toni Creation {getDate()}</BottomFooter>
     </Main>

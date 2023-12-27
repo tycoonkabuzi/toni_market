@@ -39,6 +39,9 @@ const Main = styled.div`
   justify-content: center;
   grid-gap: 20px;
   height: 600px;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: auto;
+  }
 `;
 const TextContainer = styled.div`
   background-color: none;
@@ -49,10 +52,21 @@ const Text = styled.h1`
   text-align: left;
   line-height: 80px;
   animation: ${updownAnimation} 2s ease-in;
+  @media only screen and (max-width: 600px) {
+    width: 500px;
+    font-size: 50px;
+
+    margin-left: 10%;
+  }
 `;
 const CircleShoes = styled.div`
   width: 400px;
   height: 400px;
+  @media only screen and (max-width: 600px) {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
   ${(props) =>
     props.active && props.currentIndex === 0
       ? `background-color:${blue};`
@@ -74,6 +88,10 @@ const Shoes = styled.img`
   right: -30px;
   top: 100px;
   animation: ${rightToLeftImageAnimation} 4s ease-in-out;
+  @media only screen and (max-width: 600px) {
+    width: 400px;
+    top: 80px;
+  }
 `;
 const ContainerDots = styled.div`
   background-color: rgb(232, 232, 232);

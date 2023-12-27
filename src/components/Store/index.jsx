@@ -9,6 +9,7 @@ const Main = styled.div`
   background-color: rgb(250, 247, 247);
   height: 800px;
   position: relative;
+  height: 100%;
 `;
 const Menu = styled.div`
   display: grid;
@@ -18,6 +19,9 @@ const Menu = styled.div`
   padding-top: 50px;
   padding-left: 5%;
   gap: 300px;
+  @media only screen and (max-width: 600px) {
+    gap: 70px;
+  }
 `;
 const FilterButton = styled.div`
   background-color: rgb(255, 255, 255);
@@ -50,8 +54,10 @@ const MainContent = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   padding-left: 10%;
-
   padding-top: 50px;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: auto auto;
+  }
 `;
 const Item = styled.div`
   padding-bottom: 20px;
@@ -158,7 +164,7 @@ function TheStore() {
         </ListElement>
       </Menu>
 
-      <MainContent className="store">
+      <MainContent>
         {genre.map((shoe) => (
           <Item>
             <ShoeBackground isAnimated={isAnimated}>

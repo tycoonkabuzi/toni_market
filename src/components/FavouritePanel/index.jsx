@@ -6,7 +6,7 @@ import previous from "../../assets/previous.png";
 import { Fragment, useState } from "react";
 import styled from "styled-components";
 const MainFavourite = styled.div`
-  width: 1000px;
+  width: 100%;
   margin: auto;
   padding-bottom: 100px;
   text-align: center;
@@ -18,6 +18,9 @@ const FavouriteSection = styled.div`
   justify-items: center;
   justify-content: center;
   gap: 40px;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 const BouttonCaroussel = styled.img`
   background-color: #cccccc;
@@ -31,6 +34,11 @@ const BouttonCaroussel = styled.img`
 const Shoes = styled.div`
   width: 990px;
   overflow: hidden;
+  @media only screen and (max-width: 600px) {
+    width: 211px;
+    overflow: hidden;
+    margin: auto;
+  }
 `;
 const ItemContainer = styled.div`
   margin-top: 100px;
@@ -38,15 +46,25 @@ const ItemContainer = styled.div`
   gap: 50px;
   justify-content: space-between;
   transition: 1s ease-in-out;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 const Item = styled.div`
   background-color: #efefef;
   padding-bottom: 20px;
   padding-top: 50px;
   border-radius: 15px;
+  @media only screen and (max-width: 600px) {
+    width: 20px;
+    width: 100%;
+  }
 `;
 const ItemPicture = styled.img`
   width: 150px;
+  @media only screen and (max-width: 600px) {
+    width: 120px;
+  }
 `;
 const AddToBag = styled.button`
   background-color: #525252;
@@ -62,17 +80,29 @@ const Stars = styled.img`
   width: 15px;
   padding: 5px;
 `;
+const TextContainer = styled.div`
+  @media only screen and (max-width: 600px) {
+    width: 50%;
+    margin: auto;
+  }
+`;
+const Title = styled.h1`
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+`;
+const SubTitle = styled.p``;
 
 function FavouritePanel() {
   const [translateX, setTranslateX] = useState(0);
   const [numberOfStars, setNumberOfStars] = useState(5);
   function handlePrevious() {
-    setTranslateX(translateX + 800);
+    setTranslateX(translateX + 260);
   }
   function handleNext() {
-    setTranslateX(translateX - 800);
+    setTranslateX(translateX - 260);
   }
-  if (translateX === 800 || translateX === -4000) {
+  if (translateX === 260 || translateX === -3380) {
     setTranslateX(0);
   }
   function toStar(item) {
@@ -82,10 +112,10 @@ function FavouritePanel() {
 
   return (
     <MainFavourite>
-      <Fragment>
-        <h1>Your Favourite shoes to wear</h1>
-        <p>Here is a small list of your favourite shoes </p>
-      </Fragment>
+      <TextContainer>
+        <Title>Your Favourite shoes to wear</Title>
+        <SubTitle>Here is a small list of your favourite shoes </SubTitle>
+      </TextContainer>
       <FavouriteSection>
         <BouttonCaroussel src={previous} onClick={handlePrevious} />
         <Shoes>
